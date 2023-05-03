@@ -150,7 +150,7 @@
                 <connectTime>true</connectTime>
               </value>
             </objProp>
-            <stringProp name="filename">/home/joaovsl/Documentos/StressTesting/Test/Results/SummaryReportWithCluster.csv</stringProp>
+            <stringProp name="filename">/home/joaovsl/Documentos/StressTesting/Test/Results/abc.csv</stringProp>
           </ResultCollector>
           <hashTree/>
           <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
