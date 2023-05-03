@@ -8,22 +8,37 @@ app.use(express.json())
 let stressCount = 0
 
 app.post('/', function (req, res) {
-    console.log(`I'm being stressed :( ${++stressCount}`)
-    let status = 400
-    let result = {
-        "msg": "No array was sent.\n",
-        "sorted_array": []
-    }
-    let unsortedArray = req.body['array']
+    function handleArraySorting() {
+        // Prepares error response in case of empty array
+        let status = 400
+        let result = {
+            "msg": "No array was sent.\n",
+            "sorted_array": []
+        }
+        let unsortedArray = req.body['array']
 
-    if (unsortedArray) {
-        unsortedArray = unsortedArray.map((v) => parseInt(v))
-        result['msg'] = "Here is your sorted array.\n"
-        result['sorted_array'] = quickSort(unsortedArray)
-        status = 200
+        // Sorts array
+        if (unsortedArray) {
+            console.log(`Starting sort ${stressCount}`)
+            unsortedArray = unsortedArray.map((v) => parseInt(v))
+            result['msg'] = "Here is your sorted array.\n"
+            result['sorted_array'] = quickSort(unsortedArray)
+            console.log(`Sorting ${stressCount++} finished`)
+
+            status = 200
+        }
+
+        // Sends response
+        res.status(status).send(result)
     }
 
-    res.status(status).send(result)
+    // Se par espera 2 segundos antes de responder
+    if (stressCount % 2 == 0) {
+        setTimeout(() => {
+            handleArraySorting();
+        }, 2000);
+    } else handleArraySorting();
+
 })
 
 app.listen(port, () => {
