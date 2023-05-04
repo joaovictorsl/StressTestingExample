@@ -1,0 +1,3 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+Asking for array to be sorted,1650,144153,530,468967,81301.59,0.000%,3.47071,200.41,234.11,59128.0
+TOTAL,1650,144153,530,468967,81301.59,0.000%,3.47071,200.41,234.11,59128.0
