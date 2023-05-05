@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip" elementType="Argument">
             <stringProp name="Argument.name">ip</stringProp>
-            <stringProp name="Argument.value">15.229.83.29</stringProp>
+            <stringProp name="Argument.value">150.165.80.212</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="method" elementType="Argument">
@@ -25,7 +25,7 @@
           </elementProp>
           <elementProp name="port" elementType="Argument">
             <stringProp name="Argument.name">port</stringProp>
-            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.value">3000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -37,7 +37,7 @@
         <elementProp name="ThreadGroup.main_controller" elementType="OpenModelThreadGroupController"/>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="OpenModelThreadGroup.schedule">${__groovy(
-(0..2).collect {
+(0..3).collect {
     def currentRate = it * 100
     def nextRate = (it + 1) * 100
     &quot;rate(${currentRate}/s) random_arrivals(1 s) rate(${nextRate}/s) random_arrivals(2 s)&quot;
@@ -153,7 +153,7 @@
                 <connectTime>true</connectTime>
               </value>
             </objProp>
-            <stringProp name="filename">/home/joaovsl/Documentos/StressTesting/Test/Results/BSortCloud2.csv</stringProp>
+            <stringProp name="filename">/home/joaovsl/Documentos/StressTesting/Test/Results/QSortC3.csv</stringProp>
           </ResultCollector>
           <hashTree/>
           <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
